@@ -1,0 +1,17 @@
+---
+service: verifyer
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  region: eu-north-1
+  runtime: python3.9
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - httpApi:
+          path: /
+          method: get
+...

@@ -12,7 +12,7 @@ def hello(event, context):
     :type       context:  { type_description }
     """
     body = {
-        "message": "Go Serverless v3.0! Your function executed successfully!",
+        "message": "Hejsan! Your function executed successfully!",
         "input": event,
     }
 

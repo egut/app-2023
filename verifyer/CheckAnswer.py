@@ -22,8 +22,8 @@ def CheckAnswer(event, context):
     if correctanswer == svar:
         #Skicka id + tid till DB (Del av response?)
         response = json.dumps({"message":"Correct"})
-        return response
     else:
         response = json.dumps({"message":"Incorrect"})
-        return response
+    return response
     
+#sls invoke --help

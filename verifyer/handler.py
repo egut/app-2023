@@ -20,8 +20,6 @@ def correct_answer (medlems_id):
             return row[3]
     return "Ingen sådan deltagare"
 
-print(correct_answer("20100050"))
-
 def hello(event, context):
     """
     :param      event:    The event

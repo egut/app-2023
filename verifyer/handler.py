@@ -1,12 +1,28 @@
+# -*- coding: utf-8 -*-
 """
 Verify function for Mensa swag 2023
 """
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Feb 14 20:19:37 2023
-@author: jimg
-"""
+
 import json
+
+import csv
+
+DELTAGAR_LIST=[]
+
+def get_deltagare ():
+    with open("./ListaDeltagareSvar.csv", encoding="utf-8") as csvfile:
+        deltagare = csv.reader(csvfile, delimiter=",", quotechar="|")
+        for row in deltagare:
+            DELTAGAR_LIST.append(row)         
+ 
+
+def correct_answer (medlems_id):
+    get_deltagare() 
+    for row in DELTAGAR_LIST:
+        if medlems_id == row[0]:
+            return row[3]
+    return "Ingen sådan deltagare"
+
 
 def CheckAnswer(event, context):
     """

@@ -10,6 +10,10 @@ provider:
 functions:
   hello:
     handler: handler.hello
+    package:
+      # Directories and files to include in the deployed package
+      patterns:
+        - '*.csv'
     events:
       - httpApi:
           path: /
